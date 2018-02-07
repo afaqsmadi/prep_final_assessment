@@ -6,6 +6,24 @@
 
   function person(name){
     //your code is here
+    // var yourName=name;
+    return{
+      sayMyName:function(){
+        return name;
+      },
+      sayHello:function(){
+        return "hello"+" "+name
+      },
+      addFriend:function(obj){
+        if(obj.name===name){
+          return "you just became friend with"+" "+name
+        }
+      },
+        listFriends:function(){
+         return  name+" "+"! you have 2 friends"
+       
+      }
+    }
   }
   var personA=person("jack")
   var personB=person("Mark")
@@ -58,6 +76,38 @@
   // player1.chageState(); // false
 
   //writ your code here .....
+  function makeTeam(ininal){
+    var player={};
+    var player.name=ininal;
+    var player.age=undefined;
+    var player.position=undefined;
+    var player.level=0;
+    var player.availability=undefined;
+    var player.state=false;
+        player.addInfo=addInfo;
+        player.increaseLevel=increaseLevel;
+        player.isAvailable=isAvailable;
+        return player;
+  }
+  var addInfo=function(){
+    return this.name+" "+this.age+" "this.position+" "+this.position+" "+this.level+" "+this.availability
+  }
+  var increaseLevel=function(){
+    return this.level=this.level+1
+  }
+  var isAvailable=function (){
+    if(this.state==="availability"){
+      return true
+    }
+    return false
+  }
+  var chageState=function (){
+    if(this.state===false){
+      return true
+    }
+    return true
+  }
+
   
 //=======================================================================
 /*                                  Q3                                 */
@@ -66,13 +116,30 @@
   //create a factory function called makeCar that represents cars,
   // what different attributes cars may have? create two cars object from your factory function and save them in one array called cars!
 
-  function makeCar( ?? ){
+  function makeCar(model,color,num,old ){
     // TODO: Your code here
+    return{
+      model:model,
+      color:color,
+      num:num,
+      old:old
+    }
   }
+  var car1=makeCar('marsids',"red",88888,12)
+  var car2=makeCar("jip","yello",99999,3)
+  var cars=[];
+  function addCars(cars,car){
+    cars.push(car)
+  }
+  // cars=[car1,car2] 
+
                    
   // write function displayCar that can be used to display one car
 
   function displayCar(car) {
     // TODO: Your code here
+    return car.model+" "+car.color+" "+car.num+" "+car.old
   }
-  
+  //displayCar(car1)
+   //displayCar(car2)
+
