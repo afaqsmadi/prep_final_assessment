@@ -54,6 +54,12 @@ function reduce(array, f, acc) {
 
 function addOne(array){ // arrays, loops
  // your code is here
+ var i=0
+ while(i<array.length){
+  array[i]=array[i]+1;
+  i++;
+ }
+ return array;
 }
 //=============================================================================
 /*                                    Q2                                     */
@@ -67,6 +73,10 @@ function addOne(array){ // arrays, loops
 
 function factorial(n) {
    //your code is here
+   if(n===0||n===1){
+    return 1
+   }
+   return n*factorial(n-1)
 }
 
 
@@ -88,6 +98,7 @@ var bucketOfSloths = [
  
 function longestName(bucketOfSloths) {
   //your code is here 
+
 }
 
 //=============================================================================
@@ -99,6 +110,12 @@ function longestName(bucketOfSloths) {
 
   function wordLengths(str){
   //your code is here
+  var arr=str.split(' '),
+     newarr=[];
+  each(arr,function(elem,i){
+    return newarr.push(elem.length);
+  })
+  return newarr;
   }
 
   wordLengths("hello its me") // [5,3,2]
@@ -108,8 +125,15 @@ function longestName(bucketOfSloths) {
 // Using reduce, write a function countOccurrences that accepts two parameters: a string, 
 // and a character (e.g. "a"), and returns number of times that character occured:
 
-  function countOccurrences(string, character) { 
-    // your code is here
+  function countOccurrences(string, character) {
+  // your code is here
+  var arr= string.split("");
+  return reduce(arr,function(acc,elem){
+    if(character===elem){
+      acc=acc+1
+    }
+    return acc
+    },0 ) 
   }
   // countOccurrences("hello", "l"); // 2
   // countOccurrences("hello, world!", "l"); // 3
@@ -123,6 +147,9 @@ function longestName(bucketOfSloths) {
 
   function values(obj){
   // your code is here
+  return map(obj,function(val,key){
+     return val
+  });
   }
   // values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]; 
 
